@@ -1,6 +1,10 @@
 import "./SingleCard.css";
 
-export default function SingleCard({ card }) {
+export default function SingleCard({ card, handleChoice }) {
+  const handleClick = () => {
+    handleChoice(card);
+  };
+
   return (
     <div className="card">
       <div>
@@ -8,7 +12,7 @@ export default function SingleCard({ card }) {
         <img
           className="back"
           src="/img/cover.png"
-          // onClick={handleCLick}
+          onClick={handleClick}
           alt="card back"
         />
       </div>
